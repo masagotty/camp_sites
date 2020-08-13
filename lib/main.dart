@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CampSites',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Color.fromRGBO(0, 0, 81, 1),
-        primaryColor: Color.fromRGBO(216, 27, 96, 1),
-        textTheme: GoogleFonts.latoTextTheme(),
+      theme: ThemeData(
+        // brightness: Brightness.dark,
+        primarySwatch: Colors.indigo,
+        fontFamily: 'NotoSansJP-Regular',
       ),
       // home: HomePage(),
       onGenerateRoute: (RouteSettings settings) {

@@ -7,7 +7,6 @@ class DetailPage extends StatelessWidget {
       body: Center(
           child: Text(
         'Detail Page',
-        style: TextStyle(color: Colors.white),
       )),
     );
   }

@@ -32,7 +32,6 @@ class HomePage extends StatelessWidget {
                     },
                     child: Text(
                       'Go to Detail Page',
-                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   GestureDetector(
@@ -41,12 +40,10 @@ class HomePage extends StatelessWidget {
                     },
                     child: Text(
                       'Go to User Page',
-                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   Text(
                     category + 'の中身',
-                    style: TextStyle(color: Colors.white),
                   )
                 ],
               ),
