@@ -8,7 +8,7 @@ class Site {
     @required this.description,
     @required this.likes,
     @required this.rate,
-    this.isFavorite,
+    this.isLiked = false,
   });
 
   final String imageUrl;
@@ -17,10 +17,14 @@ class Site {
   final String description;
   final int likes;
   final double rate;
-  bool isFavorite = false;
+  bool isLiked;
+
+  void toggleLiked() {
+    isLiked = !isLiked;
+  }
 }
 
-final products = [
+final sites = [
   Site(
     imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
     title: "キャンプ場1",
