@@ -11,6 +11,12 @@ class SiteCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Container(
+        color: Colors.indigo[100],
+        child: Text(site.name),
+      ),
+    );
   }
 }
