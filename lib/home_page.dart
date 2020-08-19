@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camp_sites/sites_page.dart';
+import 'package:camp_sites/like_page.dart';
 import 'package:camp_sites/detail_page.dart';
 import 'package:camp_sites/user_page.dart';
 
@@ -22,12 +23,16 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: categories.map((String category) {
-            return Padding(
+          children: <Widget>[
+            Padding(
               padding: const EdgeInsets.all(16.0),
               child: SitesPage(),
-            );
-          }).toList(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: LikePage(),
+            ),
+          ],
         ),
       ),
     );
