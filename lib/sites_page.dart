@@ -9,17 +9,17 @@ class SitesPage extends StatelessWidget {
     SiteData siteData = Provider.of<SiteData>(context);
     return GridView.builder(
       itemCount: siteData.siteCount,
-      padding: EdgeInsets.all(8),
+      // padding: EdgeInsets.all(8),
       itemBuilder: (context, index) {
         return SiteCell(
           site: siteData.getSites[index],
         );
       },
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 3 / 5,
+        childAspectRatio: 1,
         crossAxisCount: 2,
-        crossAxisSpacing: 24,
-        mainAxisSpacing: 24,
+        // crossAxisSpacing: 8,
+        // mainAxisSpacing: 8,
       ),
     );
   }
