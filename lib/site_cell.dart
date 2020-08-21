@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'site.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class SiteCell extends StatelessWidget {
   final Site site;
@@ -31,7 +32,7 @@ class SiteCell extends StatelessWidget {
               icon: Icon(
                 Icons.favorite,
                 size: 32,
-                color: Colors.pink,
+                color: Colors.pink[400],
               ),
               onPressed: () {},
             ),
@@ -40,12 +41,22 @@ class SiteCell extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
                   site.name,
                   style: TextStyle(color: Colors.white),
                 ),
-                Text(site.name),
+                SmoothStarRating(
+                    allowHalfRating: true,
+                    onRated: (v) {},
+                    starCount: 5,
+                    rating: site.rate,
+                    size: 16.0,
+                    isReadOnly: true,
+                    color: Colors.yellow,
+                    borderColor: Colors.yellow,
+                    spacing: 0.0),
               ],
             ),
           ),

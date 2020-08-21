@@ -12,8 +12,7 @@ class HomePage extends StatelessWidget {
       length: categories.length,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Camp Sites'),
-          bottom: TabBar(
+          title: TabBar(
             isScrollable: true,
             tabs: categories.map(
               (String category) {
