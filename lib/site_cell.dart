@@ -1,13 +1,29 @@
+import 'package:camp_sites/site_data.dart';
 import 'package:flutter/material.dart';
-import 'site.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:camp_sites/site.dart';
 
 class SiteCell extends StatelessWidget {
-  final Site site;
+  final bool isFavorite;
+  final String siteName;
+  final String siteImageUrl;
+  final String sitePrefecture;
+  final String siteDescription;
+  final int siteLikes;
+  final double siteRate;
+  final Function toggleFavorite;
 
   const SiteCell({
     Key key,
-    @required this.site,
+    @required this.isFavorite,
+    @required this.siteName,
+    @required this.siteImageUrl,
+    @required this.sitePrefecture,
+    @required this.siteDescription,
+    @required this.siteLikes,
+    @required this.siteRate,
+    @required this.toggleFavorite,
   }) : super(key: key);
 
   @override
@@ -21,7 +37,7 @@ class SiteCell extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: Image.network(
-                site.imageUrl,
+                siteImageUrl,
                 fit: BoxFit.cover,
               ),
             ),
@@ -30,11 +46,11 @@ class SiteCell extends StatelessWidget {
             alignment: Alignment.topRight,
             child: IconButton(
               icon: Icon(
-                Icons.favorite,
+                isFavorite ? Icons.favorite : Icons.favorite_border,
                 size: 32,
                 color: Colors.pink[400],
               ),
-              onPressed: () {},
+              onPressed: toggleFavorite,
             ),
           ),
           Padding(
@@ -44,14 +60,14 @@ class SiteCell extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  site.name,
+                  siteName,
                   style: TextStyle(color: Colors.white),
                 ),
                 SmoothStarRating(
                     allowHalfRating: true,
                     onRated: (v) {},
                     starCount: 5,
-                    rating: site.rate,
+                    rating: siteRate,
                     size: 16.0,
                     isReadOnly: true,
                     color: Colors.yellow,

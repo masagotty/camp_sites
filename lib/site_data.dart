@@ -13,6 +13,10 @@ class SiteData extends ChangeNotifier {
     return _sites.length;
   }
 
+  bool checkLiked(Site site) {
+    return site.isLiked;
+  }
+
   void likeSite(Site site) {
     site.toggleLiked();
     notifyListeners();

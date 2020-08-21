@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:camp_sites/home_page.dart';
 import 'package:camp_sites/detail_page.dart';
-import 'package:camp_sites/user_page.dart';
 import 'package:provider/provider.dart';
 import 'package:camp_sites/site_data.dart';
 

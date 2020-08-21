@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camp_sites/sites_page.dart';
 import 'package:camp_sites/like_page.dart';
-import 'package:camp_sites/detail_page.dart';
-import 'package:camp_sites/user_page.dart';
 
 class HomePage extends StatelessWidget {
   final categories = ['一覧', 'お気に入り'];
