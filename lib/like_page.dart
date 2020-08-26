@@ -1,4 +1,4 @@
-import 'package:camp_sites/Site.dart';
+import 'package:camp_sites/site.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:camp_sites/site_cell.dart';
@@ -8,12 +8,7 @@ class LikePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<SiteData>(builder: (context, siteData, child) {
-      // List<Site>にしようとするとエラーになる
-      // The argument type 'Site
-      // (where Site is defined in /Users/Gotty/AndroidStudioProjects/MyApps/camp_sites/lib/site.dart)'
-      // can't be assigned to the parameter type 'Site
-      // (where Site is defined in /Users/Gotty/AndroidStudioProjects/MyApps/camp_sites/lib/Site.dart)'
-      List likeSites = [];
+      List<Site> likeSites = [];
       for (var site in siteData.getSites) {
         if (site.isLiked = true) {
           likeSites.add(site);
