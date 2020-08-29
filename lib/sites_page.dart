@@ -23,7 +23,18 @@ class SitesPage extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/user',
-                arguments: site.name,
+                arguments: {
+                  'name': site.name,
+                  'URL': site.imageUrl,
+                  'rate': site.rate,
+                  'isFavorite': site.isLiked,
+                  'toggleFavorite': () {
+                    siteData.likeSite(site);
+                  },
+                  'prefecture': site.prefecture,
+                  'likes': site.likes,
+                  'description': site.description,
+                },
               );
             },
             child: SiteCell(

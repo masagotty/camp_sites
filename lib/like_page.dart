@@ -32,8 +32,17 @@ class LikePage extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/user',
-                arguments: <String, Object>{
+                arguments: {
                   'name': likeSite.name,
+                  'URL': likeSite.imageUrl,
+                  'rate': likeSite.rate,
+                  'isFavorite': likeSite.isLiked,
+                  'toggleFavorite': () {
+                    siteData.likeSite(likeSite);
+                  },
+                  'prefecture': likeSite.prefecture,
+                  'likes': likeSite.likes,
+                  'description': likeSite.description,
                 },
               );
             },
