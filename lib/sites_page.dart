@@ -18,17 +18,23 @@ class SitesPage extends StatelessWidget {
         // padding: EdgeInsets.all(8),
         itemBuilder: (context, index) {
           final site = siteData.getSites[index];
-          return SiteCell(
-            siteName: site.name,
-            siteDescription: site.description,
-            siteImageUrl: site.imageUrl,
-            siteLikes: site.likes,
-            siteRate: site.rate,
-            sitePrefecture: site.prefecture,
-            isFavorite: site.isLiked,
-            toggleFavorite: () {
-              siteData.likeSite(site);
+          return GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                '/user',
+                arguments: site.name,
+              );
             },
+            child: SiteCell(
+              siteName: site.name,
+              siteImageUrl: site.imageUrl,
+              siteRate: site.rate,
+              isFavorite: site.isLiked,
+              toggleFavorite: () {
+                siteData.likeSite(site);
+              },
+            ),
           );
         },
       );

@@ -1,29 +1,26 @@
-import 'package:camp_sites/site_data.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
-import 'package:camp_sites/site.dart';
 
 class SiteCell extends StatelessWidget {
   final bool isFavorite;
   final String siteName;
   final String siteImageUrl;
-  final String sitePrefecture;
-  final String siteDescription;
-  final int siteLikes;
   final double siteRate;
   final Function toggleFavorite;
+  // final String sitePrefecture;
+  // final String siteDescription;
+  // final int siteLikes;
 
   const SiteCell({
     Key key,
     @required this.isFavorite,
     @required this.siteName,
     @required this.siteImageUrl,
-    @required this.sitePrefecture,
-    @required this.siteDescription,
-    @required this.siteLikes,
     @required this.siteRate,
     @required this.toggleFavorite,
+    // @required this.sitePrefecture,
+    // @required this.siteDescription,
+    // @required this.siteLikes,
   }) : super(key: key);
 
   @override

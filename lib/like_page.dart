@@ -23,20 +23,29 @@ class LikePage extends StatelessWidget {
           // mainAxisSpacing: 8,
         ),
         itemCount: likeSites.length,
-        // padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
         itemBuilder: (context, index) {
           final likeSite = likeSites[index];
-          return SiteCell(
-            siteName: likeSite.name,
-            siteDescription: likeSite.description,
-            siteImageUrl: likeSite.imageUrl,
-            siteLikes: likeSite.likes,
-            siteRate: likeSite.rate,
-            sitePrefecture: likeSite.prefecture,
-            isFavorite: likeSite.isLiked,
-            toggleFavorite: () {
-              siteData.likeSite(likeSite);
+          return GestureDetector(
+            onTap: () {
+              print(likeSite.name);
+              Navigator.pushNamed(
+                context,
+                '/user',
+                arguments: <String, Object>{
+                  'name': likeSite.name,
+                },
+              );
             },
+            child: SiteCell(
+              siteName: likeSite.name,
+              siteImageUrl: likeSite.imageUrl,
+              siteRate: likeSite.rate,
+              isFavorite: likeSite.isLiked,
+              toggleFavorite: () {
+                siteData.likeSite(likeSite);
+              },
+            ),
           );
         },
       );
