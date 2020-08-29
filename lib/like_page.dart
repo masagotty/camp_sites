@@ -10,7 +10,7 @@ class LikePage extends StatelessWidget {
     return Consumer<SiteData>(builder: (context, siteData, child) {
       List<Site> likeSites = [];
       for (var site in siteData.getSites) {
-        if (site.isLiked = true) {
+        if (site.isLiked == true) {
           likeSites.add(site);
           print(likeSites);
         }
