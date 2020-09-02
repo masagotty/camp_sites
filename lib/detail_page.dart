@@ -11,30 +11,40 @@ class DetailPage extends StatelessWidget {
     // final bool isFavorite = arg['isFavorite'];
     // final Function toggleFavorite = arg['toggleFavorite'];
     final String description = arg['description'];
+    final String prefecture = arg['prefecture'];
 
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Text(name),
-          Image.network(
-            url,
-            fit: BoxFit.cover,
-          ),
-          SmoothStarRating(
-            allowHalfRating: true,
-            onRated: (v) {},
-            starCount: 5,
-            rating: rate,
-            size: 16.0,
-            isReadOnly: true,
-            color: Colors.yellow,
-            borderColor: Colors.yellow,
-            spacing: 0.0,
-          ),
-          Text(description),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Image.network(
+                  url,
+                  fit: BoxFit.cover,
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(name),
+                    Text(prefecture),
+                    SmoothStarRating(
+                      allowHalfRating: true,
+                      onRated: (v) {},
+                      starCount: 5,
+                      rating: rate,
+                      size: 16.0,
+                      isReadOnly: true,
+                      color: Colors.yellow,
+                      borderColor: Colors.yellow,
+                      spacing: 0.0,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Text(description),
+          ],
+        ),
       ),
     );
   }
