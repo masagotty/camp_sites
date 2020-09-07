@@ -58,7 +58,12 @@ class SiteCell extends StatelessWidget {
               children: <Widget>[
                 Text(
                   siteName,
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, shadows: <Shadow>[
+                    Shadow(
+                      color: Colors.grey[700],
+                      blurRadius: 20.0,
+                    ),
+                  ]),
                 ),
                 SmoothStarRating(
                     allowHalfRating: true,

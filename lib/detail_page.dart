@@ -39,12 +39,11 @@ class DetailPage extends StatelessWidget {
                           name,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 48.0,
+                            fontSize: 36.0,
                             fontWeight: FontWeight.bold,
                             shadows: <Shadow>[
                               Shadow(
                                 color: Colors.grey[700],
-                                // offset: Offset.fromDirection(.0),
                                 blurRadius: 20.0,
                               ),
                             ],
