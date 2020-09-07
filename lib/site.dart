@@ -26,7 +26,8 @@ class Site {
 
 final sites = [
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
+    imageUrl:
+        "https://s3-ap-northeast-1.amazonaws.com/cdn.travel-star.jp/production/posts/eyecatches/000/013/661/eyecatch.jpg?1551482531",
     name: "キャンプ場1",
     prefecture: "埼玉県",
     description:
@@ -35,8 +36,7 @@ final sites = [
     rate: 4.5,
   ),
   Site(
-    imageUrl:
-        "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_198.jpg",
+    imageUrl: "https://www.odakyu-voice.jp/trip/2018_07_feature/img/main.jpg",
     name: "キャンプ場2",
     prefecture: "東京都",
     description:
@@ -45,7 +45,8 @@ final sites = [
     rate: 3.3,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/schipperke/n02104365_2981.jpg",
+    imageUrl:
+        "https://www.vill.samegawa.fukushima.jp/data/img/1547013049_1.jpg",
     name: "キャンプ場3",
     prefecture: "静岡県",
     description:
@@ -54,7 +55,7 @@ final sites = [
     rate: 0.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/hound-ibizan/n02091244_2760.jpg",
+    imageUrl: "https://takibi.style/wp-content/uploads/2019/04/hyogo_camp1.jpg",
     name: "キャンプ場4",
     prefecture: "山梨県",
     description:
@@ -63,7 +64,8 @@ final sites = [
     rate: 4.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/bouvier/n02106382_117.jpg",
+    imageUrl:
+        "https://saikohan.com/wp-content/themes/kohan-camp/images/top/main003.jpg",
     name: "キャンプ場5",
     prefecture: "千葉県",
     description:
@@ -72,7 +74,8 @@ final sites = [
     rate: 5.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
+    imageUrl:
+        "https://s3-ap-northeast-1.amazonaws.com/cdn.travel-star.jp/production/posts/eyecatches/000/013/661/eyecatch.jpg?1551482531",
     name: "キャンプ場1",
     prefecture: "埼玉県",
     description:
@@ -81,8 +84,7 @@ final sites = [
     rate: 4.5,
   ),
   Site(
-    imageUrl:
-        "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_198.jpg",
+    imageUrl: "https://www.odakyu-voice.jp/trip/2018_07_feature/img/main.jpg",
     name: "キャンプ場2",
     prefecture: "東京都",
     description:
@@ -91,7 +93,8 @@ final sites = [
     rate: 3.3,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/schipperke/n02104365_2981.jpg",
+    imageUrl:
+        "https://www.vill.samegawa.fukushima.jp/data/img/1547013049_1.jpg",
     name: "キャンプ場3",
     prefecture: "静岡県",
     description:
@@ -100,7 +103,7 @@ final sites = [
     rate: 0.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/hound-ibizan/n02091244_2760.jpg",
+    imageUrl: "https://takibi.style/wp-content/uploads/2019/04/hyogo_camp1.jpg",
     name: "キャンプ場4",
     prefecture: "山梨県",
     description:
@@ -109,7 +112,8 @@ final sites = [
     rate: 4.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/bouvier/n02106382_117.jpg",
+    imageUrl:
+        "https://saikohan.com/wp-content/themes/kohan-camp/images/top/main003.jpg",
     name: "キャンプ場5",
     prefecture: "千葉県",
     description:
@@ -118,7 +122,8 @@ final sites = [
     rate: 5.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
+    imageUrl:
+        "https://s3-ap-northeast-1.amazonaws.com/cdn.travel-star.jp/production/posts/eyecatches/000/013/661/eyecatch.jpg?1551482531",
     name: "キャンプ場1",
     prefecture: "埼玉県",
     description:
@@ -127,8 +132,7 @@ final sites = [
     rate: 4.5,
   ),
   Site(
-    imageUrl:
-        "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_198.jpg",
+    imageUrl: "https://www.odakyu-voice.jp/trip/2018_07_feature/img/main.jpg",
     name: "キャンプ場2",
     prefecture: "東京都",
     description:
@@ -137,7 +141,8 @@ final sites = [
     rate: 3.3,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/schipperke/n02104365_2981.jpg",
+    imageUrl:
+        "https://www.vill.samegawa.fukushima.jp/data/img/1547013049_1.jpg",
     name: "キャンプ場3",
     prefecture: "静岡県",
     description:
@@ -146,7 +151,7 @@ final sites = [
     rate: 0.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/hound-ibizan/n02091244_2760.jpg",
+    imageUrl: "https://takibi.style/wp-content/uploads/2019/04/hyogo_camp1.jpg",
     name: "キャンプ場4",
     prefecture: "山梨県",
     description:
@@ -155,7 +160,8 @@ final sites = [
     rate: 4.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/bouvier/n02106382_117.jpg",
+    imageUrl:
+        "https://saikohan.com/wp-content/themes/kohan-camp/images/top/main003.jpg",
     name: "キャンプ場5",
     prefecture: "千葉県",
     description:
@@ -164,7 +170,8 @@ final sites = [
     rate: 5.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
+    imageUrl:
+        "https://s3-ap-northeast-1.amazonaws.com/cdn.travel-star.jp/production/posts/eyecatches/000/013/661/eyecatch.jpg?1551482531",
     name: "キャンプ場1",
     prefecture: "埼玉県",
     description:
@@ -173,8 +180,7 @@ final sites = [
     rate: 4.5,
   ),
   Site(
-    imageUrl:
-        "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_198.jpg",
+    imageUrl: "https://www.odakyu-voice.jp/trip/2018_07_feature/img/main.jpg",
     name: "キャンプ場2",
     prefecture: "東京都",
     description:
@@ -183,7 +189,8 @@ final sites = [
     rate: 3.3,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/schipperke/n02104365_2981.jpg",
+    imageUrl:
+        "https://www.vill.samegawa.fukushima.jp/data/img/1547013049_1.jpg",
     name: "キャンプ場3",
     prefecture: "静岡県",
     description:
@@ -192,7 +199,7 @@ final sites = [
     rate: 0.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/hound-ibizan/n02091244_2760.jpg",
+    imageUrl: "https://takibi.style/wp-content/uploads/2019/04/hyogo_camp1.jpg",
     name: "キャンプ場4",
     prefecture: "山梨県",
     description:
@@ -201,7 +208,8 @@ final sites = [
     rate: 4.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/bouvier/n02106382_117.jpg",
+    imageUrl:
+        "https://saikohan.com/wp-content/themes/kohan-camp/images/top/main003.jpg",
     name: "キャンプ場5",
     prefecture: "千葉県",
     description:
@@ -210,7 +218,8 @@ final sites = [
     rate: 5.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
+    imageUrl:
+        "https://s3-ap-northeast-1.amazonaws.com/cdn.travel-star.jp/production/posts/eyecatches/000/013/661/eyecatch.jpg?1551482531",
     name: "キャンプ場1",
     prefecture: "埼玉県",
     description:
@@ -219,8 +228,7 @@ final sites = [
     rate: 4.5,
   ),
   Site(
-    imageUrl:
-        "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_198.jpg",
+    imageUrl: "https://www.odakyu-voice.jp/trip/2018_07_feature/img/main.jpg",
     name: "キャンプ場2",
     prefecture: "東京都",
     description:
@@ -229,7 +237,8 @@ final sites = [
     rate: 3.3,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/schipperke/n02104365_2981.jpg",
+    imageUrl:
+        "https://www.vill.samegawa.fukushima.jp/data/img/1547013049_1.jpg",
     name: "キャンプ場3",
     prefecture: "静岡県",
     description:
@@ -238,7 +247,7 @@ final sites = [
     rate: 0.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/hound-ibizan/n02091244_2760.jpg",
+    imageUrl: "https://takibi.style/wp-content/uploads/2019/04/hyogo_camp1.jpg",
     name: "キャンプ場4",
     prefecture: "山梨県",
     description:
@@ -247,7 +256,8 @@ final sites = [
     rate: 4.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/bouvier/n02106382_117.jpg",
+    imageUrl:
+        "https://saikohan.com/wp-content/themes/kohan-camp/images/top/main003.jpg",
     name: "キャンプ場5",
     prefecture: "千葉県",
     description:
@@ -256,7 +266,8 @@ final sites = [
     rate: 5.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/collie-border/n02106166_26.jpg",
+    imageUrl:
+        "https://s3-ap-northeast-1.amazonaws.com/cdn.travel-star.jp/production/posts/eyecatches/000/013/661/eyecatch.jpg?1551482531",
     name: "キャンプ場1",
     prefecture: "埼玉県",
     description:
@@ -265,8 +276,7 @@ final sites = [
     rate: 4.5,
   ),
   Site(
-    imageUrl:
-        "https://images.dog.ceo/breeds/retriever-flatcoated/n02099267_198.jpg",
+    imageUrl: "https://www.odakyu-voice.jp/trip/2018_07_feature/img/main.jpg",
     name: "キャンプ場2",
     prefecture: "東京都",
     description:
@@ -275,7 +285,8 @@ final sites = [
     rate: 3.3,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/schipperke/n02104365_2981.jpg",
+    imageUrl:
+        "https://www.vill.samegawa.fukushima.jp/data/img/1547013049_1.jpg",
     name: "キャンプ場3",
     prefecture: "静岡県",
     description:
@@ -284,7 +295,7 @@ final sites = [
     rate: 0.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/hound-ibizan/n02091244_2760.jpg",
+    imageUrl: "https://takibi.style/wp-content/uploads/2019/04/hyogo_camp1.jpg",
     name: "キャンプ場4",
     prefecture: "山梨県",
     description:
@@ -293,7 +304,8 @@ final sites = [
     rate: 4.0,
   ),
   Site(
-    imageUrl: "https://images.dog.ceo/breeds/bouvier/n02106382_117.jpg",
+    imageUrl:
+        "https://saikohan.com/wp-content/themes/kohan-camp/images/top/main003.jpg",
     name: "キャンプ場5",
     prefecture: "千葉県",
     description:

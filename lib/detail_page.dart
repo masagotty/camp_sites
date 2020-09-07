@@ -13,7 +13,8 @@ class DetailPage extends StatelessWidget {
     final String description = arg['description'];
     final String prefecture = arg['prefecture'];
 
-    return SafeArea(
+    return Container(
+      color: Colors.white,
       child: Scaffold(
         body: Column(
           children: <Widget>[
@@ -26,22 +27,44 @@ class DetailPage extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Column(
-                  children: <Widget>[
-                    Text(name),
-                    Text(prefecture),
-                    SmoothStarRating(
-                      allowHalfRating: true,
-                      onRated: (v) {},
-                      starCount: 5,
-                      rating: rate,
-                      size: 16.0,
-                      isReadOnly: true,
-                      color: Colors.yellow,
-                      borderColor: Colors.yellow,
-                      spacing: 0.0,
+                AspectRatio(
+                  aspectRatio: 1.0,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          name,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 48.0,
+                            fontWeight: FontWeight.bold,
+                            shadows: <Shadow>[
+                              Shadow(
+                                color: Colors.grey[700],
+                                // offset: Offset.fromDirection(.0),
+                                blurRadius: 20.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(prefecture),
+                        SmoothStarRating(
+                          allowHalfRating: true,
+                          onRated: (v) {},
+                          starCount: 5,
+                          rating: rate,
+                          size: 16.0,
+                          isReadOnly: true,
+                          color: Colors.yellow,
+                          borderColor: Colors.yellow,
+                          spacing: 0.0,
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
