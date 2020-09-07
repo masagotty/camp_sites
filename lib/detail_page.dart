@@ -19,9 +19,12 @@ class DetailPage extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                Image.network(
-                  url,
-                  fit: BoxFit.cover,
+                AspectRatio(
+                  aspectRatio: 1.0,
+                  child: Image.network(
+                    url,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 Column(
                   children: <Widget>[
