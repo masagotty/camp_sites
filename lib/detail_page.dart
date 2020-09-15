@@ -55,37 +55,19 @@ class DetailPage extends StatelessWidget {
                 AspectRatio(
                   aspectRatio: 1.0,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
+                    padding: const EdgeInsets.all(16.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Stack(
                           children: <Widget>[
-                            // Text(
-                            //   name,
-                            //   style: TextStyle(
-                            //     fontSize: 36.0,
-                            //     foreground: Paint()
-                            //       ..style = PaintingStyle.stroke
-                            //       ..strokeWidth = 5
-                            //       ..maskFilter =
-                            //           MaskFilter.blur(BlurStyle.normal, 5.0)
-                            //       ..color = Colors.grey[800],
-                            //   ),
-                            // ),
                             Text(
                               name,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 36.0,
                                 fontWeight: FontWeight.bold,
-                                // shadows: <Shadow>[
-                                //   Shadow(
-                                //     color: Colors.grey[700],
-                                //     blurRadius: 20.0,
-                                //   ),
-                                // ],
                               ),
                             ),
                           ],
@@ -115,7 +97,13 @@ class DetailPage extends StatelessWidget {
                 ),
               ],
             ),
-            Text(description),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                description,
+                style: TextStyle(fontSize: 16.0),
+              ),
+            ),
           ],
         ),
       ),
