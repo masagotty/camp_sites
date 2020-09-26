@@ -80,12 +80,15 @@ class DetailPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Text(
-                            prefecture,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold,
+                          Material(
+                            color: Colors.transparent,
+                            child: Text(
+                              prefecture,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           SmoothStarRating(
