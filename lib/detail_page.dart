@@ -18,56 +18,53 @@ class DetailPage extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Hero(
-                  tag: url,
-                  child: AspectRatio(
+            Hero(
+              tag: name,
+              child: Stack(
+                children: <Widget>[
+                  AspectRatio(
                     aspectRatio: 1.0,
                     child: Image.network(
                       url,
                       fit: BoxFit.cover,
                     ),
                   ),
-                ),
-                AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Column(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 2,
-                        child: Container(),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Color.fromARGB(16, 0, 0, 0),
-                                  Color.fromARGB(216, 32, 32, 32),
-                                ]),
+                  AspectRatio(
+                    aspectRatio: 1.0,
+                    child: Column(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 3,
+                          child: Container(),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Color.fromARGB(16, 0, 0, 0),
+                                    Color.fromARGB(216, 32, 32, 32),
+                                  ]),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Stack(
-                          children: <Widget>[
-                            Hero(
-                              tag: name,
-                              child: Container(
+                  AspectRatio(
+                    aspectRatio: 1.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Stack(
+                            children: <Widget>[
+                              Container(
                                 width: double.infinity,
                                 child: Material(
                                   color: Colors.transparent,
@@ -81,20 +78,17 @@ class DetailPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          prefecture,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold,
+                            ],
                           ),
-                        ),
-                        Hero(
-                          tag: name + url,
-                          child: SmoothStarRating(
+                          Text(
+                            prefecture,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SmoothStarRating(
                             allowHalfRating: true,
                             onRated: (v) {},
                             starCount: 5,
@@ -105,12 +99,12 @@ class DetailPage extends StatelessWidget {
                             borderColor: Colors.yellow,
                             spacing: 0.0,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),

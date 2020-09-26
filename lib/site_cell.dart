@@ -27,92 +27,91 @@ class SiteCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(2.0),
-      child: Stack(
-        children: <Widget>[
-          Hero(
-            tag: siteImageUrl,
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Image.network(
-                  siteImageUrl,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.0,
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  flex: 3,
-                  child: Container(),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color.fromARGB(16, 0, 0, 0),
-                            Color.fromARGB(216, 32, 32, 32),
-                          ]),
-                    ),
+      child: Hero(
+        tag: siteName,
+        child: Scaffold(
+          body: Stack(
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 1,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.network(
+                    siteImageUrl,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: IconButton(
-              icon: Icon(
-                isFavorite ? Icons.favorite : Icons.favorite_border,
-                size: 32,
-                color: Colors.pink[400],
               ),
-              onPressed: toggleFavorite,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Hero(
-                  tag: siteName,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: Text(
-                      siteName,
-                      style: TextStyle(
-                        color: Colors.white,
+              AspectRatio(
+                aspectRatio: 1.0,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 3,
+                        child: Container(),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Color.fromARGB(16, 0, 0, 0),
+                                  Color.fromARGB(216, 32, 32, 32),
+                                ]),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                    size: 32,
+                    color: Colors.pink[400],
+                  ),
+                  onPressed: toggleFavorite,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Material(
+                      color: Colors.transparent,
+                      child: Text(
+                        siteName,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
+                    SmoothStarRating(
+                        allowHalfRating: true,
+                        onRated: (v) {},
+                        starCount: 5,
+                        rating: siteRate,
+                        size: 16.0,
+                        isReadOnly: true,
+                        color: Colors.yellow,
+                        borderColor: Colors.yellow,
+                        spacing: 0.0),
+                  ],
                 ),
-                Hero(
-                  tag: siteName + siteImageUrl,
-                  child: SmoothStarRating(
-                      allowHalfRating: true,
-                      onRated: (v) {},
-                      starCount: 5,
-                      rating: siteRate,
-                      size: 16.0,
-                      isReadOnly: true,
-                      color: Colors.yellow,
-                      borderColor: Colors.yellow,
-                      spacing: 0.0),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
