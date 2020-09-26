@@ -20,11 +20,14 @@ class DetailPage extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Image.network(
-                    url,
-                    fit: BoxFit.cover,
+                Hero(
+                  tag: url,
+                  child: AspectRatio(
+                    aspectRatio: 1.0,
+                    child: Image.network(
+                      url,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 AspectRatio(
@@ -62,12 +65,21 @@ class DetailPage extends StatelessWidget {
                       children: <Widget>[
                         Stack(
                           children: <Widget>[
-                            Text(
-                              name,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 36.0,
-                                fontWeight: FontWeight.bold,
+                            Hero(
+                              tag: name,
+                              child: Container(
+                                width: double.infinity,
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: Text(
+                                    name,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 36.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -80,16 +92,19 @@ class DetailPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SmoothStarRating(
-                          allowHalfRating: true,
-                          onRated: (v) {},
-                          starCount: 5,
-                          rating: rate,
-                          size: 16.0,
-                          isReadOnly: true,
-                          color: Colors.yellow,
-                          borderColor: Colors.yellow,
-                          spacing: 0.0,
+                        Hero(
+                          tag: name + url,
+                          child: SmoothStarRating(
+                            allowHalfRating: true,
+                            onRated: (v) {},
+                            starCount: 5,
+                            rating: rate,
+                            size: 16.0,
+                            isReadOnly: true,
+                            color: Colors.yellow,
+                            borderColor: Colors.yellow,
+                            spacing: 0.0,
+                          ),
                         ),
                       ],
                     ),

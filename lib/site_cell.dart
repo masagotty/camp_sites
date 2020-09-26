@@ -29,14 +29,42 @@ class SiteCell extends StatelessWidget {
       padding: const EdgeInsets.all(2.0),
       child: Stack(
         children: <Widget>[
-          AspectRatio(
-            aspectRatio: 1,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Image.network(
-                siteImageUrl,
-                fit: BoxFit.cover,
+          Hero(
+            tag: siteImageUrl,
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.network(
+                  siteImageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
+            ),
+          ),
+          AspectRatio(
+            aspectRatio: 1.0,
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  flex: 3,
+                  child: Container(),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color.fromARGB(16, 0, 0, 0),
+                            Color.fromARGB(216, 32, 32, 32),
+                          ]),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Align(
@@ -56,25 +84,31 @@ class SiteCell extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  siteName,
-                  style: TextStyle(color: Colors.white, shadows: <Shadow>[
-                    Shadow(
-                      color: Colors.grey[700],
-                      blurRadius: 20.0,
+                Hero(
+                  tag: siteName,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Text(
+                      siteName,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
-                  ]),
+                  ),
                 ),
-                SmoothStarRating(
-                    allowHalfRating: true,
-                    onRated: (v) {},
-                    starCount: 5,
-                    rating: siteRate,
-                    size: 16.0,
-                    isReadOnly: true,
-                    color: Colors.yellow,
-                    borderColor: Colors.yellow,
-                    spacing: 0.0),
+                Hero(
+                  tag: siteName + siteImageUrl,
+                  child: SmoothStarRating(
+                      allowHalfRating: true,
+                      onRated: (v) {},
+                      starCount: 5,
+                      rating: siteRate,
+                      size: 16.0,
+                      isReadOnly: true,
+                      color: Colors.yellow,
+                      borderColor: Colors.yellow,
+                      spacing: 0.0),
+                ),
               ],
             ),
           ),
