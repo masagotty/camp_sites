@@ -87,25 +87,35 @@ class SiteCell extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        siteName,
-                        style: TextStyle(
-                          color: Colors.white,
+                    Expanded(
+                      flex: 6,
+                      child: Container(),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          siteName,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                    SmoothStarRating(
-                        allowHalfRating: true,
-                        onRated: (v) {},
-                        starCount: 5,
-                        rating: siteRate,
-                        size: 16.0,
-                        isReadOnly: true,
-                        color: Colors.yellow,
-                        borderColor: Colors.yellow,
-                        spacing: 0.0),
+                    Expanded(
+                      flex: 1,
+                      child: SmoothStarRating(
+                          allowHalfRating: true,
+                          onRated: (v) {},
+                          starCount: 5,
+                          rating: siteRate,
+                          size: 16.0,
+                          isReadOnly: true,
+                          color: Colors.yellow,
+                          borderColor: Colors.yellow,
+                          spacing: 0.0),
+                    ),
                   ],
                 ),
               ),

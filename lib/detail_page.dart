@@ -60,8 +60,8 @@ class DetailPage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.end,
-                          // crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Expanded(
                               flex: 12,
@@ -69,35 +69,15 @@ class DetailPage extends StatelessWidget {
                             ),
                             Expanded(
                               flex: 2,
-                              child: Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Container(
-                                  width: double.infinity,
-                                  child: Material(
-                                    color: Colors.transparent,
-                                    child: Text(
-                                      name,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 36.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Align(
-                                alignment: Alignment.bottomLeft,
+                              child: Container(
+                                width: double.infinity,
                                 child: Material(
                                   color: Colors.transparent,
                                   child: Text(
-                                    prefecture,
+                                    name,
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 15.0,
+                                      fontSize: 36.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -106,19 +86,30 @@ class DetailPage extends StatelessWidget {
                             ),
                             Expanded(
                               flex: 1,
-                              child: Align(
-                                alignment: Alignment.bottomLeft,
-                                child: SmoothStarRating(
-                                  allowHalfRating: true,
-                                  onRated: (v) {},
-                                  starCount: 5,
-                                  rating: rate,
-                                  size: 16.0,
-                                  isReadOnly: true,
-                                  color: Colors.yellow,
-                                  borderColor: Colors.yellow,
-                                  spacing: 0.0,
+                              child: Material(
+                                color: Colors.transparent,
+                                child: Text(
+                                  prefecture,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: SmoothStarRating(
+                                allowHalfRating: true,
+                                onRated: (v) {},
+                                starCount: 5,
+                                rating: rate,
+                                size: 16.0,
+                                isReadOnly: true,
+                                color: Colors.yellow,
+                                borderColor: Colors.yellow,
+                                spacing: 0.0,
                               ),
                             ),
                           ],
