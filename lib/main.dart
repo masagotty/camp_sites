@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // brightness: Brightness.dark,
         primarySwatch: Colors.indigo,
-        fontFamily: 'NotoSansJP-Regular',
+        // fontFamily: 'NotoSansJP-Regular',
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{

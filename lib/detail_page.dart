@@ -20,93 +20,113 @@ class DetailPage extends StatelessWidget {
           children: <Widget>[
             Hero(
               tag: name,
-              child: Stack(
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 1.0,
-                    child: Image.network(
-                      url,
-                      fit: BoxFit.cover,
+              child: Material(
+                child: Stack(
+                  children: <Widget>[
+                    AspectRatio(
+                      aspectRatio: 1.0,
+                      child: Image.network(
+                        url,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  AspectRatio(
-                    aspectRatio: 1.0,
-                    child: Column(
-                      children: <Widget>[
-                        Expanded(
-                          flex: 3,
-                          child: Container(),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Color.fromARGB(16, 0, 0, 0),
-                                    Color.fromARGB(216, 32, 32, 32),
-                                  ]),
+                    AspectRatio(
+                      aspectRatio: 1.0,
+                      child: Column(
+                        children: <Widget>[
+                          Expanded(
+                            flex: 3,
+                            child: Container(),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Color.fromARGB(16, 0, 0, 0),
+                                      Color.fromARGB(216, 32, 32, 32),
+                                    ]),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  AspectRatio(
-                    aspectRatio: 1.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                width: double.infinity,
+                    AspectRatio(
+                      aspectRatio: 1.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.end,
+                          // crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                              flex: 12,
+                              child: Container(),
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Align(
+                                alignment: Alignment.bottomLeft,
+                                child: Container(
+                                  width: double.infinity,
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: Text(
+                                      name,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 36.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Align(
+                                alignment: Alignment.bottomLeft,
                                 child: Material(
                                   color: Colors.transparent,
                                   child: Text(
-                                    name,
+                                    prefecture,
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 36.0,
+                                      fontSize: 15.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
-                          Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              prefecture,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.bold,
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Align(
+                                alignment: Alignment.bottomLeft,
+                                child: SmoothStarRating(
+                                  allowHalfRating: true,
+                                  onRated: (v) {},
+                                  starCount: 5,
+                                  rating: rate,
+                                  size: 16.0,
+                                  isReadOnly: true,
+                                  color: Colors.yellow,
+                                  borderColor: Colors.yellow,
+                                  spacing: 0.0,
+                                ),
                               ),
                             ),
-                          ),
-                          SmoothStarRating(
-                            allowHalfRating: true,
-                            onRated: (v) {},
-                            starCount: 5,
-                            rating: rate,
-                            size: 16.0,
-                            isReadOnly: true,
-                            color: Colors.yellow,
-                            borderColor: Colors.yellow,
-                            spacing: 0.0,
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Padding(
