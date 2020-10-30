@@ -23,8 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^0.2.5 # add dependency for Firebase Core
-  firebase_analytics: ^1.0.4 # add dependency for Google Analytics for Firebase
+  firebase_core: ^0.5.1
+  firebase_analytics: ^6.1.0
   google_fonts: ^1.1.0
   provider: ^4.3.2
   smooth_star_rating: ^1.1.1
