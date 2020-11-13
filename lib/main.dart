@@ -3,6 +3,7 @@ import 'package:camp_sites/home_page.dart';
 import 'package:camp_sites/detail_page.dart';
 import 'package:provider/provider.dart';
 import 'package:camp_sites/site_data.dart';
+import 'package:camp_sites/sites_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +25,10 @@ class MyApp extends StatelessWidget {
         '/': (BuildContext context) => ChangeNotifierProvider<SiteData>(
               create: (context) => SiteData(),
               child: HomePage(),
+            ),
+        '/sites': (BuildContext context) => ChangeNotifierProvider<SiteData>(
+              create: (context) => SiteData(),
+              child: SitesPage(),
             ),
         '/detail': (BuildContext context) => ChangeNotifierProvider<SiteData>(
               create: (context) => SiteData(),
