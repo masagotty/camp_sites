@@ -14,14 +14,14 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               'lib/src/icon_with_title.png',
-              height: 120,
+              height: 160,
             ),
             SizedBox(
               height: 120,
             ),
             RoundedButton(
               color: Colors.indigo,
-              title: 'Login',
+              title: 'ログイン',
               onPressedCallback: () {
                 //Go to login screen.
                 Navigator.pushNamed(context, '/sites');
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
             ),
             RoundedButton(
               color: Colors.indigo,
-              title: 'Login With なんちゃら',
+              title: 'Googleでログイン',
               onPressedCallback: () {
                 //Go to login screen.
                 Navigator.pushNamed(context, '/sites');
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
             ),
             RoundedButton(
               color: Colors.indigo[300],
-              title: 'Registration',
+              title: '新規登録',
               onPressedCallback: () {
                 //Go to login screen.
                 Navigator.pushNamed(context, '/sites');
