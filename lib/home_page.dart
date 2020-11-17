@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
               title: '新規登録',
               onPressedCallback: () {
                 //Go to login screen.
-                Navigator.pushNamed(context, '/sites');
+                Navigator.pushNamed(context, '/registration');
               },
             ),
           ],

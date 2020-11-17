@@ -6,6 +6,7 @@ import 'package:camp_sites/site_data.dart';
 import 'package:camp_sites/sites_page.dart';
 import 'package:camp_sites/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:camp_sites/registration_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,11 @@ class MyApp extends StatelessWidget {
         '/login': (BuildContext context) => ChangeNotifierProvider<SiteData>(
               create: (context) => SiteData(),
               child: LoginPage(),
+            ),
+        '/registration': (BuildContext context) =>
+            ChangeNotifierProvider<SiteData>(
+              create: (context) => SiteData(),
+              child: RegistrationPage(),
             ),
         '/sites': (BuildContext context) => ChangeNotifierProvider<SiteData>(
               create: (context) => SiteData(),
