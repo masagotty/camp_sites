@@ -4,13 +4,16 @@ import 'package:camp_sites/detail_page.dart';
 import 'package:provider/provider.dart';
 import 'package:camp_sites/site_data.dart';
 import 'package:camp_sites/sites_page.dart';
+import 'package:camp_sites/login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,6 +29,10 @@ class MyApp extends StatelessWidget {
               create: (context) => SiteData(),
               child: HomePage(),
             ),
+        '/login': (BuildContext context) => ChangeNotifierProvider<SiteData>(
+              create: (context) => SiteData(),
+              child: LoginPage(),
+            ),
         '/sites': (BuildContext context) => ChangeNotifierProvider<SiteData>(
               create: (context) => SiteData(),
               child: SitesPage(),
@@ -39,24 +46,6 @@ class MyApp extends StatelessWidget {
               child: DetailPage(),
             ),
       },
-      // onGenerateRoute: (RouteSettings settings) {
-      //   switch (settings.name) {
-      //     case '/':
-      //       return MaterialPageRoute<void>(
-      //         builder: (_) => HomePage(),
-      //       );
-      //     case '/detail':
-      //       return MaterialPageRoute<void>(
-      //         builder: (_) => DetailPage(),
-      //       );
-      //     case '/user':
-      //       return MaterialPageRoute<void>(
-      //         builder: (_) => UserPage(),
-      //       );
-      //     default:
-      //       throw UnimplementedError('Undefined route ${settings.name}');
-      //   }
-      // },
     );
   }
 }

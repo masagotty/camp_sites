@@ -12,19 +12,32 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image.asset(
-              'lib/src/icon_with_title.png',
-              height: 160,
+            Hero(
+              tag: 'logo',
+              child: Image.asset(
+                'lib/src/icon_with_title.png',
+                height: 160,
+              ),
             ),
-            SizedBox(
+            Container(
               height: 120,
+              child: Center(
+                child: Text(
+                  'あいうえおあいうえお\nあいうえおあいうえおあいうえお',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
             RoundedButton(
               color: Colors.indigo,
               title: 'ログイン',
               onPressedCallback: () {
                 //Go to login screen.
-                Navigator.pushNamed(context, '/sites');
+                Navigator.pushNamed(context, '/login');
               },
             ),
             RoundedButton(
