@@ -3,6 +3,7 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'constants.dart';
 import 'package:camp_sites/rounded_button.dart';
+import 'package:camp_sites/user_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -82,7 +83,11 @@ class _LoginPageState extends State<LoginPage> {
                     );
                     if (loginUser != null) {
                       print(loginUser);
-                      Navigator.pushNamed(context, '/sites');
+                      final User user = (_auth.currentUser);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UserPage(userData: user)));
                     }
                     setState(() {
                       showSpinner = false;

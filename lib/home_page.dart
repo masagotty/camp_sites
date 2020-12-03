@@ -1,7 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:camp_sites/rounded_button.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:camp_sites/user_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ],
+  );
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<User> _handleSignIn() async {
+    GoogleSignInAccount googleCurrentUser = _googleSignIn.currentUser;
+    try {
+      if (googleCurrentUser == null)
+        googleCurrentUser = await _googleSignIn.signInSilently();
+      if (googleCurrentUser == null)
+        googleCurrentUser = await _googleSignIn.signIn();
+      if (googleCurrentUser == null) return null;
+
+      GoogleSignInAuthentication googleAuth =
+          await googleCurrentUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      final User user = (await _auth.signInWithCredential(credential)).user;
+      print("signed in " + user.displayName);
+
+      return user;
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
+  void transitionNextPage(User user) {
+    if (user == null) return;
+
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => UserPage(userData: user)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +93,9 @@ class HomePage extends StatelessWidget {
               title: 'Googleでログイン',
               onPressedCallback: () {
                 //Go to login screen.
-                Navigator.pushNamed(context, '/sites');
+                _handleSignIn()
+                    .then((User user) => transitionNextPage(user))
+                    .catchError((e) => print(e));
               },
             ),
             RoundedButton(

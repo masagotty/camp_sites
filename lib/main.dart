@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CampSites',
       theme: ThemeData(
-        // brightness: Brightness.dark,
+        // brightness: Brightness.dark,23
         primarySwatch: Colors.indigo,
         // fontFamily: 'NotoSansJP-Regular',
       ),
