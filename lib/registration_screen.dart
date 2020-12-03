@@ -82,7 +82,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     );
                     if (newUser != null) {
                       print(newUser);
-                      Navigator.pushNamed(context, '/sites');
+                      Navigator.pop(context);
                     }
 
                     setState(() {
