@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   Future<User> _handleSignIn() async {
     GoogleSignInAccount googleCurrentUser = _googleSignIn.currentUser;
     try {
+      // _googleSignIn.signInSilentlyがエラーを吐くのでいったん暫定的にコメントアウト
       // if (googleCurrentUser == null)
       //   googleCurrentUser = await _googleSignIn.signInSilently(
       //     suppressErrors: false,
