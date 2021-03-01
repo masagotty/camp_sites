@@ -109,6 +109,22 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pushNamed(context, '/registration');
               },
             ),
+            RoundedButton(
+              color: Colors.indigo,
+              title: '一覧ページへ',
+              onPressedCallback: () {
+                //Go to login screen.
+                Navigator.pushNamed(context, '/sites');
+              },
+            ),
+            RoundedButton(
+              color: Colors.indigo,
+              title: 'スクレイピングページへ',
+              onPressedCallback: () {
+                //Go to login screen.
+                Navigator.pushNamed(context, '/scraping');
+              },
+            ),
           ],
         ),
       ),

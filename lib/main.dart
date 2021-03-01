@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:camp_sites/site_data.dart';
 import 'package:camp_sites/sites_page.dart';
 import 'package:camp_sites/login_page.dart';
+import 'package:camp_sites/scraping_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:camp_sites/registration_screen.dart';
 
@@ -50,6 +51,10 @@ class MyApp extends StatelessWidget {
         '/user': (BuildContext context) => ChangeNotifierProvider<SiteData>(
               create: (context) => SiteData(),
               child: DetailPage(),
+            ),
+        '/scraping': (BuildContext context) => ChangeNotifierProvider<SiteData>(
+              create: (context) => SiteData(),
+              child: ScrapingPage(),
             ),
       },
     );
