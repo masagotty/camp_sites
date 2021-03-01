@@ -38,7 +38,7 @@ class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '全国のキャンプ場の数',
+          '全国のキャンプ場の数です',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,
