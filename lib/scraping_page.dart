@@ -22,9 +22,8 @@ class CanpSitesNumberPage extends StatefulWidget {
 
 class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
   // 最終的にはBaseURLにAPIから取得したユーザーIDを渡せば良さそう
-  static const url = 'https://www.nap-camp.com/list';
-
-  String _campSitesNumber = '';
+  static const url = 'https://www.nap-camp.com/list?sortId=21&pageId=';
+  List<Text> _campSitesNamesText = [];
 
   @override
   void initState() {
@@ -47,11 +46,12 @@ class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
         ),
       ),
       body: Center(
-        child: _campSitesNumber.isNotEmpty
-            ? RoundedButton(
-                color: Colors.indigo,
-                title: _campSitesNumber,
-                onPressedCallback: () {},
+        child: _campSitesNamesText.isNotEmpty
+            ? SingleChildScrollView(
+                child: Column(
+                  children: _campSitesNamesText,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                ),
               )
             : CircularProgressIndicator(),
       ),
@@ -66,13 +66,16 @@ class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
   }
 
   _getCampSitesNumber() async {
-    final driver = HtmlDriver();
-    await driver.setDocumentFromUri(Uri.parse(url));
-    setState(() {
-      _campSitesNumber = driver.document
-          .querySelector(
-              '#app > div.main > div > div > div.g-container.main > div.body > div.head > h1 > span')
-          .text;
-    });
+    _campSitesNamesText = [];
+    setState(() {});
+    for (var i = 1; i < 11; i++) {
+      final driver = HtmlDriver();
+      await driver.setDocumentFromUri(Uri.parse(url + i.toString()));
+      final elements = driver.document.querySelectorAll('div.header-body > h3');
+      for (var elem in elements) {
+        _campSitesNamesText.add(Text(elem.text));
+      }
+    }
+    setState(() {});
   }
 }
