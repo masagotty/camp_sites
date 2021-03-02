@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:universal_html/driver.dart';
-import 'package:camp_sites/rounded_button.dart';
 
 class ScrapingPage extends StatelessWidget {
   @override
@@ -21,7 +20,6 @@ class CanpSitesNumberPage extends StatefulWidget {
 }
 
 class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
-  // 最終的にはBaseURLにAPIから取得したユーザーIDを渡せば良さそう
   static const url = 'https://www.nap-camp.com/list?sortId=21&pageId=';
   List<Text> _campSitesNamesText = [];
 
@@ -37,7 +35,7 @@ class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '全国のキャンプ場の数です',
+          '人気キャンプ場',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,
@@ -68,12 +66,15 @@ class _CanpSitesNumberPageState extends State<CanpSitesNumberPage> {
   _getCampSitesNumber() async {
     _campSitesNamesText = [];
     setState(() {});
-    for (var i = 1; i < 11; i++) {
+    for (var i = 1; i < 2; i++) {
       final driver = HtmlDriver();
       await driver.setDocumentFromUri(Uri.parse(url + i.toString()));
-      final elements = driver.document.querySelectorAll('div.header-body > h3');
-      for (var elem in elements) {
-        _campSitesNamesText.add(Text(elem.text));
+      final napSites =
+          driver.document.querySelectorAll('div.campsite-result-item');
+      print(napSites[0].querySelector('h3').text);
+      for (var napSite in napSites) {
+        print(napSite.toString());
+        _campSitesNamesText.add(Text(napSite.text));
       }
     }
     setState(() {});
